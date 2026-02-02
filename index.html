@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Tôi Của Tương Lai | 8/3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfaf7;
+            --primary-color: #d4a373;
+            --text-color: #5b4a42;
+            --accent-color: #e29578;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        /* Khung thư giống trang giấy */
+        .letter-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .letter-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 50px;
+            width: 1px; height: 100%;
+            background: rgba(212, 163, 115, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #f1f1f1;
+            border-radius: 5px;
+            background: #fafafa;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 250px;
+            resize: none;
+            background-image: linear-gradient(#f1f1f1 1px, transparent 1px);
+            background-size: 100% 30px;
+            line-height: 30px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(226, 149, 120, 0.4);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .clb-name {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Gửi tôi của những năm tháng ấy...</h1>
+            <p class="intro">"Viết một bức thư cho chính mình của tương lai – khi đôi tay đã cầm phấn, <br> và trái tim vẫn vẹn nguyên những đam mê thuở ban đầu."</p>
+        </header>
+
+        <main>
+            <form id="futureLetterForm">
+                <div class="letter-box">
+                    <label for="name">Gửi đến: (Tên của bạn hoặc biệt danh)</label>
+                    <input type="text" id="name" placeholder="Ví dụ: Cô giáo tương lai của tôi..." required>
+
+                    <label for="email">Địa chỉ Email nhận lại thư:</label>
+                    <input type="email" id="email" placeholder="Hệ thống sẽ gửi lại thư vào đúng ngày bạn chọn" required>
+
+                    <label for="time">Bạn muốn nhận lại thư vào lúc nào?</label>
+                    <select id="time">
+                        <option value="2027">8/3/2027 (1 năm sau)</option>
+                        <option value="2029">8/3/2029 (3 năm sau)</option>
+                        <option value="2031">8/3/2031 (5 năm sau - Ngày tốt nghiệp?)</option>
+                    </select>
+
+                    <label for="content">Nội dung bức thư:</label>
+                    <textarea id="content" placeholder="Hôm nay bạn thế nào? Bạn đang ấp ủ ước mơ gì cho sự nghiệp giáo dục và sự kiện..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Gửi bức thư vào tương lai</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>Một chiến dịch của <span class="clb-name">CLB Truyền thông & Sự kiện</span></p>
+            <p>&copy; 2026 - Chúc mừng ngày Quốc tế Phụ nữ 8/3</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('futureLetterForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn! Bức thư đã được niêm phong và lưu giữ trong hộp thư thời gian. Hãy chờ đợi điều bất ngờ vào tương lai nhé!');
+            this.reset();
+        }
+    </script>
+</body>
+</html>
